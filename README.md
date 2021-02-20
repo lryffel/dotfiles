@@ -21,7 +21,7 @@ Run `:PlugInstall` in vim to install the plugins.
 ## fish (Shell)
 Configured to use vi-mode. after pressing escape, enter insert mode by pressing `i`.
 Change your default shell by running
-`chsh -s /usr/bin/fish`.
+`chsh -s /usr/bin/fish` or `usermod -s /usr/bin/fish $USER`.
 
 ## ranger (File manager)
 Set to preview images automatically.
@@ -36,3 +36,4 @@ Purple color scheme, some icons.
 Configured to work with synctex and to start automatically in dark mode.
 
 ## vimb (Browser)
+Configured to look minimalistic.

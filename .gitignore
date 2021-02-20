@@ -1,5 +1,5 @@
-.config/vimb/closed
-.config/vimb/command
-.config/vimb/cookies.db
-.config/vimb/history
-.config/vimb/search
+vimb/closed
+vimb/command
+vimb/cookies.db
+vimb/history
+vimb/search
