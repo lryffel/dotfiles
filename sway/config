@@ -12,7 +12,7 @@ output eDP-1 resolution 1920x1080 position 0,0
 output DP-4  resolution 1920x1080 position 1920,0
 output DP-5  resolution 1920x1080 position 3840,0
 # Wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/wave.png fill
+output * bg /usr/share/backgrounds/archlinux/wave.png fill
 
 
 ### Variables

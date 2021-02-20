@@ -1,13 +1,15 @@
 #!/bin/bash
 
+# parent directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # install necessary programs
-sudo pacman -S fish sway swaylock swayidle ranger vim vimb waybar zathura git
+# sudo pacman -S fish sway swaylock swayidle ranger vim vimb waybar zathura git
 
 # make symlinks
-ln -s fish ~/.config/fish
-ln -s ranger ~/.config/ranger
-ln -s sway ~/.config/sway
-ln -s vimb ~/.config/vimb
-ln -s .vimrc ~/.vimrc
-ln -s waybar ~/.config/waybar
-ln -s zathura ~/.config/zathura
+ln -s -i $DIR/fish ~/.config
+ln -s -i $DIR/ranger ~/.config
+ln -s -i $DIR/sway ~/.config
+ln -s -i $DIR/vimb ~/.config
+ln -s -i $DIR/vimrc ~/.vimrc
+ln -s -i $DIR/waybar ~/.config
+ln -s -i $DIR/zathura ~/.config
