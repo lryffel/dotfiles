@@ -12,11 +12,9 @@ alias s='ls -la --color=auto'
 alias d='cd'
 
 # Launch programs
+# --servername VIM for it to work with reverse synctex
 alias v='vim --servername VIM'
 alias vim='vim --servername VIM'
-
-# Cosmetics
-alias arch='archey3'
 
 # git
 alias ga='git add'

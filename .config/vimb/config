@@ -1,0 +1,33 @@
+set dark-mode=true
+set hint-keys=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+set home-page=https://duckduckgo.com/
+set incsearch=true
+set input-autohide=true
+set input-css=background-color:#303030;font-family:monospace;
+set download-path=~/Downloads
+
+# navigation
+nmap H <C-o>
+nmap L <C-i>
+nmap s :open d 
+
+# zooming
+nnoremap + zi
+nnoremap - zo
+nnoremap = zz
+
+# presentation mode
+nnoremap p :set status-bar=true<CR>
+nnoremap P :set status-bar=false<CR>
+
+
+shortcut-add d=https://duckduckgo.com/?q=$0&t=h_
+shortcut-add y=https://youtube.com/results?search_query=$0
+shortcut-add gh=https://github.com/$0/$1
+
+set editor-command=alacritty -e vim %s
+
+# purple: #940BAD
+set status-css=background-color:#333333;font-family:monospace;
+set status-ssl-css=background-color:#333333;font-family:monospace;
+set status-ssl-invalid-css=background-color:#333333;font-family:monospace;

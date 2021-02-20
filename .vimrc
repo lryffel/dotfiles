@@ -1,4 +1,12 @@
+" install junegunn/vim-plug if it is not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins
+" reload vimrc and run :PlugInstall to install
 """""""""
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -35,9 +43,6 @@ Plug 'rust-lang/rust.vim'
 " fish support
 Plug 'dag/vim-fish'
 call plug#end()
-
-" lilypond support
-set runtimepath+=/usr/share/vim/vimfiles/ftplugin/
 
 " General settings
 """""""""""""""""""
