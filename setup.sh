@@ -13,3 +13,5 @@ ln -s -i $DIR/vimb ~/.config
 ln -s -i $DIR/vimrc ~/.vimrc
 ln -s -i $DIR/waybar ~/.config
 ln -s -i $DIR/zathura ~/.config
+ln -s -i $DIR/alacritty ~/.config
+ln -s -i $DIR/qutebrowser ~/.config
