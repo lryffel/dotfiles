@@ -33,7 +33,7 @@ Plug 'tpope/vim-fugitive'
 " linting and IDE-like behaviour
 Plug 'dense-analysis/ale'
 " status bar
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 " repeat surround commands
 Plug 'tpope/vim-repeat'
 " GitHub integration
@@ -59,7 +59,7 @@ let &showbreak='---->' " line break symbols
 set timeoutlen=1000 ttimeoutlen=0 " no delay for visual mode
 set hlsearch " highlight searched terms
 set incsearch " highlight as you type
-" set laststatus=2 " make lightline appear
+set laststatus=2 " make lightline appear
 set showcmd " show what command you're typing
 set smartindent
 set cursorline
@@ -156,13 +156,13 @@ let g:ale_linters = {
 let g:ale_completion_enabled = 1
 
 " statusline
-" let g:lightline = {
-"   \ 'colorscheme': 'gruvbox',
-"   \ 'active': {
-"   \   'left': [ [ 'mode', 'paste' ],
-"   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"   \ },
-"   \ 'component_function': {
-"   \   'gitbranch': 'FugitiveHead'
-"   \ },
-"   \}
+let g:lightline = {
+  \ 'colorscheme': 'gruvbox',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+\}
