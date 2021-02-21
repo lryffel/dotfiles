@@ -1,0 +1,8 @@
+key_bindings:
+  - { key: Escape,  mods: Control|Shift, action: SpawnNewInstance }
+    # Plus and Equals cannot be pressed without Shift on swiss keyboards
+  - { key: Plus,  mods: Control|Shift, action: IncreaseFontSize }
+  - { key: Equals,  mods: Control|Shift, action: ResetFontSize }
+
+font:
+  size: 14.0
