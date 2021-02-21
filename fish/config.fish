@@ -10,6 +10,7 @@ alias s='ls -la --color=auto'
 
 # Navigation
 alias d='cd'
+alias q='exit'
 
 # Launch programs
 # --servername VIM for it to work with reverse synctex
