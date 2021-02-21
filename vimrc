@@ -42,6 +42,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'rust-lang/rust.vim'
 " fish support
 Plug 'dag/vim-fish'
+" highlight rgb colors
+Plug 'ap/vim-css-color'
 call plug#end()
 
 " General settings
@@ -63,6 +65,7 @@ set laststatus=2 " make lightline appear
 set showcmd " show what command you're typing
 set smartindent
 set cursorline
+set clipboard=unnamed " sync with system clipboard
 
 filetype plugin indent on " make vim recognize filetypes
 syntax on " syntax highlighting
@@ -121,6 +124,7 @@ nnoremap <leader>cp "+p
 inoremap <C-v> <C-r>+
 
 " autocomplete
+""""""""""""""""""""""""""""
 "inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
 
