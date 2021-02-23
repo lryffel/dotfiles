@@ -18,6 +18,8 @@ Includes the following plugins:
 See junegunn/vim-plug for details of the plugin manager.
 Run `:PlugInstall` in vim to install the plugins.
 
+## neovim
+
 ## fish (Shell)
 Configured to use vi-mode. after pressing escape, enter insert mode by pressing `i`.
 Change your default shell by running
@@ -37,3 +39,8 @@ Configured to work with synctex and to start automatically in dark mode.
 
 ## vimb (Browser)
 Configured to look minimalistic.
+
+## qutebrowser (Browser)
+
+## alacritty (Terminal emulator)
+

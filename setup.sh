@@ -4,6 +4,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # install necessary programs
 # sudo pacman -S fish sway swaylock swayidle ranger vim vimb waybar zathura git brightnessctl qutebrowser nvim
+# pip install neovim neovim-remote
 
 # make symlinks
 ln -s -i $DIR/fish ~/.config
