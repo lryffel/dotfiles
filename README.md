@@ -19,6 +19,12 @@ See junegunn/vim-plug for details of the plugin manager.
 Run `:PlugInstall` in vim to install the plugins.
 
 ## neovim
+To set this one up go run
+```
+pip install neovim
+pip install neovim-remote
+```
+in addition to the instructions for vim.
 
 ## fish (Shell)
 Configured to use vi-mode. after pressing escape, enter insert mode by pressing `i`.
@@ -26,21 +32,32 @@ Change your default shell by running
 `chsh -s /usr/bin/fish` or `usermod -s /usr/bin/fish $USER`.
 
 ## ranger (File manager)
-Set to preview images automatically.
+Could be set up to display images but I don't how currently.
+Opens latex files with the `--servername VIM` option for vim
+which, with my current setup, enables reverse synctex.
 
-## sway (Window manager)
-Keybindings, purple color scheme, starts waybar.
+## sway (Wayland window manager)
+Keybindings, purple color scheme, starts (and hence depends on) waybar.
 
-## waybar (Status bar)
+## waybar (Wayland status bar)
 Purple color scheme, some icons.
+
+## i3 (X window manager)
+Starts (and hence depends on) polybar.
+
+## polybar (X status bar)
+Not very well configured, may need some work.
 
 ## zathura (PDF/Epub reader)
 Configured to work with synctex and to start automatically in dark mode.
 
 ## vimb (Browser)
-Configured to look minimalistic.
+Configured so that text boxes can be opened in vim (using Ctrl+T).
 
 ## qutebrowser (Browser)
+Dark mode even for websites that do not have a dark mode. Don't know
+how to turn it off though.
 
 ## alacritty (Terminal emulator)
+Just configured so that swiss keyboards can also zoom in.
 
