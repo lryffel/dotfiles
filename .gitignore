@@ -7,3 +7,5 @@ vimb/search
 qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/quickmarks
+
+nvim/.*
