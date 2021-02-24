@@ -1,3 +1,14 @@
+# How to use this
+To copy a configuration folder,
+delete or back up your current configuration folder of the program
+and symlink the configuration folder using
+```
+ln -s /absolute/path/to/repo/folder ~/.config
+```
+Of course you can also just copy the folder to where it needs to go,
+but then it becomes a bit of a pain to synchronize changes across
+machines.
+
 # Configured programs
 ## vim (Text editor)
 Manage plugins
@@ -16,9 +27,15 @@ Includes the following plugins:
   12. rust-lang (rust support)
   13. vim-fish (fish support)
 See junegunn/vim-plug for details of the plugin manager.
-Run `:PlugInstall` in vim to install the plugins.
+Run `:PlugInstall` in `vim` to install the plugins.
+Contrary to neovim, the `vim` configuration file is located at `~`
+and is called `.vimrc`. To copy it, do
+```
+ln -s /absolute/path/to/repo/vimrc ~/.vimrc
+```
+Latex support requires you to install `xdotools`.
 
-## neovim
+## neovim (Text editor)
 To set this one up go run
 ```
 pip install neovim
@@ -44,6 +61,11 @@ Purple color scheme, some icons.
 
 ## i3 (X window manager)
 Starts (and hence depends on) polybar.
+Make sure to change `$terminal`, `$browser`,
+`$filemanager` and `$mixer` in `i3/config`
+to programs you have.
+To change the background image, modify the file `i3/fehbg`
+accordingly.
 
 ## polybar (X status bar)
 Not very well configured, may need some work.
