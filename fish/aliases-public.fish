@@ -1,6 +1,7 @@
 ### Navigation
 alias d='cd'
 alias q='exit'
+alias :q='exit'
 
 ### Launch programs
 #
