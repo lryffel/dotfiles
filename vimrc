@@ -155,7 +155,8 @@ let g:NERDTreeMinimalUI=1
 let g:ale_linters = {
   \    'tex': ['chktex', 'lacheck'],
   \    'bib': ['bibclean'],
-  \    'rust': ['analyzer']
+  \    'rust': ['analyzer'],
+  \    'py': ['pylint']
 \}
 let g:ale_completion_enabled = 1
 
