@@ -35,6 +35,7 @@ configuration with keybindings
   3. `e` for using the eraser tool,
   4. `f` for using the highlighter tool,
   5. `s` for using the select tool.
+
 To use it, make a folder `ShortcutPlugin` in `usr/share/xournalpp/plugins/`
 and save [this file](https://raw.githubusercontent.com/raw-bacon/dotfiles/main/xournalpp/plugins/ShortcutsPlugin/main.lua) there.
 Then, select
