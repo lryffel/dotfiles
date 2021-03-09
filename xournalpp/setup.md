@@ -1,6 +1,5 @@
 # Custom Keybindings in xournal++
-
-## Quick custom configuration
+## Setup
 This is a description of how to get my particular
 configuration with keybindings
   1. `q` for toggling between dotted and plain lines,
