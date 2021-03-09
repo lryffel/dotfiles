@@ -42,28 +42,5 @@ Then, select
 `Plugin > Plugin Manager` in the xournal++ app
 and enable
 `ShortcutsPlugin` (you may have to scroll down).
-
-
-## Setup for versioning
-Plugins are located in `/usr/share/xournalpp/plugins/`.
-So back up what is currently there, e.g. by renaming it:
-```
-cd /usr/share/xournalpp/plugins
-sudo mv plugins plugins.old
-```
-Now `cd` to where you want to store your configurations.
-For me, this is `~/repos`.
-Clone this repository using
-```
-git clone https://github.com/raw-bacon/dotfiles
-```
-and go into it:
-```
-cd dotfiles
-```
-Symlink this directory here by using
-```
-sudo ln -s ~/.../dotfiles/xournalpp/plugins /usr/share/xournalpp
-```
-(for me, it's `~/repos/dotfiles/xournalpp/plugins`).
+Restart xournal++ and you should be all set.
 
