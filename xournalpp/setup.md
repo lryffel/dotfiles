@@ -9,7 +9,8 @@ understand the following keybindings:
   5. `s` for using the select tool.
 
 To use it, make a folder `ShortcutPlugin` in `usr/share/xournalpp/plugins/`
-and save [this file](https://raw.githubusercontent.com/raw-bacon/dotfiles/main/xournalpp/plugins/ShortcutsPlugin/main.lua) there.
+and save [this file](https://raw.githubusercontent.com/raw-bacon/dotfiles/main/xournalpp/plugins/ShortcutsPlugin/main.lua) 
+and also [this file](https://github.com/raw-bacon/dotfiles/blob/main/xournalpp/plugins/ShortcutsPlugin/plugin.ini) there.
 Then, select
 `Plugin > Plugin Manager` in the xournal++ app
 and enable
