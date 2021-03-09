@@ -1,7 +1,7 @@
 # Custom Keybindings in xournal++
 ## Setup
-This is a description of how to get my particular
-configuration with keybindings
+This is a description of how to make xournal++
+understand the following keybindings:
   1. `q` for toggling between dotted and plain lines,
   2. `w` for using the pen tool,
   3. `e` for using the eraser tool,
