@@ -1,31 +1,4 @@
 # Custom Keybindings in xournal++
-## Sources
-The plugin I use for custom keybindings
-is taken from
-[here](https://github.com/xournalpp/xournalpp/issues/919#issuecomment-700247463).
-For a quick setup, 
-just copy the unzipped folder to
-`/usr/share/xournalpp/plugins/`.
-Then, in xournal++, select
-`Plugin > Plugin Manager` and enable
-`ShortcutsPlugin` (you may have to scroll down).
-
-To disable a shortcut, comment out the corresponding line
-in the file `/usr/share/xuornalpp/ShortcutsPlugin/main.lua`
-by prefixing it with `--`. You probably want to do this
-with color switching, at least for me it does not work.
-
-To change a keybinding,
-change the `["accelerator"]` parameter for the corresponding
-shortcut in the `initUi()` function.
-
-You also may want to delete some things from the lists.
-E.g., `"TOOL_DRAW_SPLINE"` in the `drawingTypeList`
-makes my xournal++ crash.
-
-Also see the official
-[plugin guide](https://xournalpp.github.io/guide/plugins/plugins/)
-for more general information concerning plugins.
 
 ## Quick custom configuration
 This is a description of how to get my particular
@@ -44,3 +17,21 @@ and enable
 `ShortcutsPlugin` (you may have to scroll down).
 Restart xournal++ and you should be all set.
 
+## Sources
+The plugin I use for custom keybindings
+is taken from
+[here](https://github.com/xournalpp/xournalpp/issues/919#issuecomment-700247463)
+and edited so that I feel comfortable using it.
+
+## Tinkering with the plugin
+To disable a shortcut, comment out the corresponding line
+in the file `/usr/share/xuornalpp/ShortcutsPlugin/main.lua`
+by prefixing it with `--`.
+
+To change a keybinding,
+change the `["accelerator"]` parameter for the corresponding
+shortcut in the `initUi()` function.
+
+Also see the official
+[plugin guide](https://xournalpp.github.io/guide/plugins/plugins/)
+for more general information concerning plugins.
