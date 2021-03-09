@@ -27,9 +27,23 @@ Also see the official
 [plugin guide](https://xournalpp.github.io/guide/plugins/plugins/)
 for more general information concerning plugins.
 
-## Setup
+## Quick custom configuration
 This is a description of how to get my particular
-configuration.
+configuration with keybindings
+  1. `q` for toggling between dotted and plain lines,
+  2. `w` for using the pen tool,
+  3. `e` for using the eraser tool,
+  4. `f` for using the highlighter tool,
+  5. `s` for using the select tool.
+To use it, make a folder `ShortcutPlugin` in `usr/share/xournalpp/plugins/`
+and save [this file](https://raw.githubusercontent.com/raw-bacon/dotfiles/main/xournalpp/plugins/ShortcutsPlugin/main.lua) there.
+Then, select
+`Plugin > Plugin Manager` in the xournal++ app
+and enable
+`ShortcutsPlugin` (you may have to scroll down).
+
+
+## Setup for versioning
 Plugins are located in `/usr/share/xournalpp/plugins/`.
 So back up what is currently there, e.g. by renaming it:
 ```
@@ -51,5 +65,4 @@ Symlink this directory here by using
 sudo ln -s ~/.../dotfiles/xournalpp/plugins /usr/share/xournalpp
 ```
 (for me, it's `~/repos/dotfiles/xournalpp/plugins`).
-This just makes it more comfortable to version the file.
 
