@@ -1,9 +1,9 @@
 function initUi()
   app.registerUi({["menu"] = "Cycle through line style", ["callback"] = "linestyle", ["accelerator"] = "q"}); -- q for no reason
-  app.registerUi({["menu"] = "Select pen", ["callback"] = "pen", ["accelerator"] = "w"}); -- w for write
-  app.registerUi({["menu"] = "Select eraser", ["callback"] = "eraser", ["accelerator"] = "e"}); -- e for erase
-  app.registerUi({["menu"] = "Select highlighter", ["callback"] = "highlighter", ["accelerator"] = "f"}); -- f for fat
-  app.registerUi({["menu"] = "Cycle through selection tools", ["callback"] = "select", ["accelerator"] = "s"}); -- s for select
+  app.registerUi({["menu"] = "Select pen tool", ["callback"] = "pen", ["accelerator"] = "w"}); -- w for write
+  app.registerUi({["menu"] = "Select eraser tool", ["callback"] = "eraser", ["accelerator"] = "e"}); -- e for erase
+  app.registerUi({["menu"] = "Select highlighter tool", ["callback"] = "highlighter", ["accelerator"] = "f"}); -- f for fat
+  app.registerUi({["menu"] = "Select select tool", ["callback"] = "selection", ["accelerator"] = "s"}); -- s for select
 end
 
 
@@ -26,16 +26,13 @@ local currentLinestyle = 1
 local selectList = {"RECT", "REGION", "OBJECT"} -- don't use play selection tool
 local currentSelect = 1
 
-local eraserList = {"STANDARD", "DELETE_STROKE"} -- I don't use WHITEOUT
-local currentEraser = 1
-
 function linestyle()
   currentLinestyle = currentLinestyle % #linestyleList + 1
   app.uiAction({["action"] = "ACTION_TOOL_LINE_STYLE_" .. linestyleList[currentLinestyle]})
   print("ACTION_TOOL_LINE_STYLE_" .. linestyleList[currentLinestyle])
 end
 
-function select()
+function selection()
   app.uiAction({["action"] = "ACTION_TOOL_SELECT_REGION"})
 end
 
