@@ -67,6 +67,26 @@ to programs you have.
 To change the background image, modify the file `i3/fehbg`
 accordingly.
 
+To get mouse tapping working, configure it in
+`/etc/X11/xorg.conf.d`. Create a file
+there called `30-touchpad.conf` and 
+make it contain the following lines:
+
+```xf86conf
+Section "InputClass"
+	Identifier "touchpad"
+	Driver "libinput"
+	MatchIsTouchpad "on"
+	Option "Tapping" "on"
+	Option "NaturalScrolling" "true"
+	Option "HorizontalScrolling" "true"
+EndSection
+```
+
+While you're there, you may want to consider adding
+`Option "XkbOptions" "caps:swapescape"` to
+`00-keyboard.conf`.
+
 ## polybar (X status bar)
 Not very well configured, may need some work.
 
