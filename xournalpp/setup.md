@@ -16,12 +16,6 @@ and enable
 `ShortcutsPlugin` (you may have to scroll down).
 Restart xournal++ and you should be all set.
 
-## Sources
-The plugin I use for custom keybindings
-is taken from
-[here](https://github.com/xournalpp/xournalpp/issues/919#issuecomment-700247463)
-and edited so that I feel comfortable using it.
-
 ## Tinkering with the plugin
 To disable a shortcut, comment out the corresponding line
 in the file `/usr/share/xuornalpp/ShortcutsPlugin/main.lua`
@@ -34,3 +28,9 @@ shortcut in the `initUi()` function.
 Also see the official
 [plugin guide](https://xournalpp.github.io/guide/plugins/plugins/)
 for more general information concerning plugins.
+
+## Sources
+The plugin I use for custom keybindings
+is taken from
+[here](https://github.com/xournalpp/xournalpp/issues/919#issuecomment-700247463)
+and edited so that I feel comfortable using it.
