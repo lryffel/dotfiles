@@ -61,6 +61,11 @@ Purple color scheme, some icons.
 
 ## i3 (X window manager)
 Starts (and hence depends on) polybar.
+Other programs you may want to install are
+pavucontrol for controlling PulseAudio,
+xclip for copying,
+and brightnessctl for changing the brightness of your monitor
+with the configured hotkeys.
 Make sure to change `$terminal`, `$browser`,
 `$filemanager` and `$mixer` in `i3/config`
 to programs you have.
