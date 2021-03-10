@@ -4,8 +4,6 @@ vimb/cookies.db
 vimb/history
 vimb/search
 
-qutebrowser/autoconfig.yml
-qutebrowser/bookmarks
-qutebrowser/quickmarks
-
 nvim/.*
+
+fish/aliases-private.fish
