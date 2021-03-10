@@ -4,16 +4,12 @@ function initUi()
   app.registerUi({["menu"] = "Select eraser tool", ["callback"] = "eraser", ["accelerator"] = "e"}); -- e for erase
   app.registerUi({["menu"] = "Select highlighter tool", ["callback"] = "highlighter", ["accelerator"] = "f"}); -- f for fat
   app.registerUi({["menu"] = "Select select tool", ["callback"] = "selection", ["accelerator"] = "s"}); -- s for select
+  app.registerUi({["menu"] = "Disable shortcuts (insert mode)", ["callback"] = "insert_mode", ["accelerator"] = "i"}); -- i for insert
+  app.registerUi({["menu"] = "Enable shortcuts (normal mode)", ["callback"] = "normal_mode", ["accelerator"] = "<Ctrl><Shift>c"}); -- = "Escape" did not work
 end
 
-
-local currentFill = false
-
-function fill()
-  currentFill = not currentFill
-  app.uiAction({["action"]="ACTION_TOOL_FILL", ["enabled"] = currentFill})
-  print("ACTION_TOOL_FILL enabled: " .. tostring(currentFill))
-end
+-- the modes are "normal" and "insert
+local currentMode = "normal"
 
 local linestyleList = {
   "PLAIN", 
@@ -33,17 +29,33 @@ function linestyle()
 end
 
 function selection()
-  app.uiAction({["action"] = "ACTION_TOOL_SELECT_REGION"})
+  if currentMode == "normal" then
+    app.uiAction({["action"] = "ACTION_TOOL_SELECT_REGION"})
+  end
 end
 
 function pen()
-  app.uiAction({["action"] = "ACTION_TOOL_PEN"})
+  if currentMode == "normal" then
+    app.uiAction({["action"] = "ACTION_TOOL_PEN"})
+  end
 end
 
 function eraser()
-  app.uiAction({["action"] = "ACTION_TOOL_ERASER"})
+  if currentMode == "normal" then
+    app.uiAction({["action"] = "ACTION_TOOL_ERASER"})
+  end
 end
 
 function highlighter()
-  app.uiAction({["action"] = "ACTION_TOOL_HILIGHTER"})
+  if currentMode == "normal" then
+    app.uiAction({["action"] = "ACTION_TOOL_HILIGHTER"})
+  end
+end
+
+function insert_mode()
+  currentMode = "insert"
+end
+
+function normal_mode()
+  currentMode = "normal"
 end
