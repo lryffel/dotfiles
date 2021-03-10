@@ -8,7 +8,7 @@ understand the following keybindings:
   4. `f` for using the highlighter tool,
   5. `s` for using the select tool.
 
-To use it, make a folder `ShortcutPlugin` in `usr/share/xournalpp/plugins/`
+To use it, make a folder `ShortcutPlugin` in `usr/share/xournalpp/plugins/` on Linux and in `C:\Program Files\Xournal++\plugins\` on Windows,
 and save [main.lua](https://raw.githubusercontent.com/raw-bacon/dotfiles/main/xournalpp/plugins/ShortcutsPlugin/main.lua) 
 and also [plugin.ini](https://github.com/raw-bacon/dotfiles/blob/main/xournalpp/plugins/ShortcutsPlugin/plugin.ini) there.
 Then, select
