@@ -35,3 +35,7 @@ The plugin I use for custom keybindings
 is taken from
 [here](https://github.com/xournalpp/xournalpp/issues/919#issuecomment-700247463)
 and edited so that I feel comfortable using it.
+
+## Custom Toolbar
+(This is mainly for myself). The toolbar is located in
+`~/.config/xournalpp/toolbar.ini`.
