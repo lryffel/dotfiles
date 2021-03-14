@@ -17,7 +17,10 @@ Plug 'preservim/nerdtree'
 " show git status in nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " snippets
-Plug 'SirVer/ultisnips'
+Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 " comment with gcc
 Plug 'tpope/vim-commentary'
 " change cwd to configured directory
@@ -92,3 +95,6 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
 \}
+
+" snipMate
+let g:snipMate = { 'snippet_version' : 1 }
