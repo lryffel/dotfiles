@@ -6,8 +6,9 @@ alias :q='exit'
 ### Launch programs
 #
 # vim
-alias v='nvim'
-alias vim='nvim'
+# --servername VIM for it to work with reverse synctex
+alias v='vim --servername VIM'
+alias vim='vim --servername VIM'
 
 # ls
 alias ls='lsd -l'
