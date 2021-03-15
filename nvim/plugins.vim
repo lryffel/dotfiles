@@ -20,7 +20,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'SirVer/ultisnips'
 " comment with gcc
 Plug 'tpope/vim-commentary'
-" change cwd to configured directory
+" change cwd to configured directory (here, the git repo)
 Plug 'airblade/vim-rooter'
 " show lines that change since last commit
 Plug 'mhinz/vim-signify'
@@ -37,7 +37,7 @@ Plug 'itchyny/lightline.vim'
 " repeat surround commands
 Plug 'tpope/vim-repeat'
 " GitHub integration
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-rhubarb'
 " Rust support
 Plug 'rust-lang/rust.vim'
 " fish support
