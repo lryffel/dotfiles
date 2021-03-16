@@ -1,7 +1,11 @@
 global !p
+# texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]]
+# texIgnoreMathZones = ['texMathText']
+# texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+# texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+# ignore = texIgnoreMathZoneIds[0]
 def math():
-		return vim.eval('vimtex#syntax#in_mathzone()') == 1
-
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 def create_row_placeholders(snip):
     # count
     placeholders_amount = int(snip.buffer[snip.line].strip())
@@ -356,8 +360,30 @@ snippet FF "\mathbb{F}" iA
 endsnippet
 
 context "math()"
+snippet KK "\mathbb{K}" iA
+\mathbb{K}
+endsnippet
+
+context "math()"
 snippet ooo "infinity" iA
 \infty
+endsnippet
+
+#mathcal
+context "math()"
+snippet BB "\mathcal{B}" iA
+\mathcal{B}
+endsnippet
+
+#greek letters
+context "math()"
+snippet aph "alpha" iA
+\alpha
+endsnippet
+
+context "math()"
+snippet phh "phi" iA
+\varphi
 endsnippet
 
 # numbering
@@ -517,3 +543,6 @@ post_jump "create_row_placeholders(snip)"
 snippet "tr(\d+)" "latex table row variable" br
 `!p snip.rv = match.group(1)`
 endsnippet
+
+#nothing	
+#empty
