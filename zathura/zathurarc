@@ -1,3 +1,4 @@
+# vim : ft=config
 set recolor true
 set synctex true
 set synctex-editor-command "nvim +%{line} %{input}"
