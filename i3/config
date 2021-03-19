@@ -1,3 +1,4 @@
+# vim : ft=config
 set $terminal 'alacritty'
 set $browser 'firefox'
 set $filemanager 'alacritty -e ranger'
