@@ -7,8 +7,8 @@ alias :q='exit'
 #
 # vim
 # --servername VIM for it to work with reverse synctex
-alias v='vim --servername VIM'
-alias vim='vim --servername VIM'
+alias v='nvim'
+alias vim='nvim'
 
 # ls
 alias ls='lsd -l'
