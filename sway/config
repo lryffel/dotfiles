@@ -63,10 +63,14 @@ input type:touchpad {
 #
 
 # Keyboard
-input * { 
+input type:keyboard { 
   xkb_layout "ch"
   xkb_variant "de_nodeadkeys"
   xkb_options "caps:swapescape"
+}
+
+input type:tablet_tool {
+  map_to_output eDP-1
 }
 
 ### Key bindings
