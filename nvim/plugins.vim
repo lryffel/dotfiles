@@ -29,12 +29,12 @@ Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 " repeat surround commands
 Plug 'tpope/vim-repeat'
-" GitHub integration
-" Plug 'tpope/vim-rhubarb'
 " Rust support
 Plug 'rust-lang/rust.vim'
 " fish support
 Plug 'dag/vim-fish'
+" Julia
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 
