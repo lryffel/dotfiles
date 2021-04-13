@@ -23,3 +23,7 @@ alias gb='git branch'
 alias gp='git push'
 alias gd='git diff'
 alias gP='git pull'
+
+# xterm
+alias xterm="xterm -fa 'Monospace' -fs 18"
+alias ssh="xterm -fa 'Monospace' -fs 18 -e ssh"
