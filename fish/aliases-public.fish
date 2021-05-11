@@ -11,7 +11,6 @@ alias v='nvim'
 alias vim='nvim'
 
 # ls
-alias ls='lsd -l'
 alias s='lsd -la'
 
 # git
