@@ -35,6 +35,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'dag/vim-fish'
 " Julia
 Plug 'JuliaEditorSupport/julia-vim'
+" csv
+Plug 'chrisbra/csv.vim'
 call plug#end()
 
 
