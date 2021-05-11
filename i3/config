@@ -1,6 +1,6 @@
 # vim : ft=config
 set $terminal 'alacritty'
-set $browser 'firefox'
+set $browser 'brave'
 set $filemanager 'alacritty -e ranger'
 set $mixer 'pavucontrol'
 
