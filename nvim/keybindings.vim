@@ -47,3 +47,7 @@ inoremap <C-v> <C-r>+
 " autocomplete
 "inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
+
+" indenting
+xnoremap < <gv
+xnoremap > >gv
