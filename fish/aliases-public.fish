@@ -25,4 +25,4 @@ alias gP='git pull'
 
 # xterm
 alias xterm="xterm -fa 'Monospace' -fs 18"
-alias ssh="xterm -fa 'Monospace' -fs 18 -e ssh"
+# alias ssh="xterm -fa 'Monospace' -fs 18 -e ssh"
