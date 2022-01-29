@@ -1,9 +1,3 @@
-vimb/closed
-vimb/command
-vimb/cookies.db
-vimb/history
-vimb/search
-
 nvim/.*
 
 fish/aliases-private.fish
