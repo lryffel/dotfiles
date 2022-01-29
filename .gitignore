@@ -1,3 +1,6 @@
 nvim/.*
 
 fish/aliases-private.fish
+
+xournalpp/autosave/
+xournalpp/metadata/
