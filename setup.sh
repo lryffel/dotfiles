@@ -1,20 +1,34 @@
 #!/bin/bash
-# uncomment what you need
 
 # parent directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # install necessary programs
-# sudo pacman -S fish sway swaylock swayidle ranger vim vimb waybar zathura git brightnessctl qutebrowser nvim
-# pip install neovim neovim-remote
+sudo pacman -S \
+  fish git ranger neovim pass \
+  sway swaylock swayidle waybar xorg-xwayland \
+  zathura zathura-pdf-poppler zathura-djvu xournalpp \
+  brightnessctl \
+  foot \
+  dunst wl-clipboard \
+  noto-fonts noto-fonts-emoji otf-font-awesome \
+  grim slurp \
+  cadence jack2 a2jmidid \
+  pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack pavucontrol \
+  python python-pip \
+  texlive-most \
+  bluez-utils
 
-# make symlinks, e.g., like this. probably best to link files rather than folders whenever possible
-# ln -s -i $DIR/fish ~/.config
-# ln -s -i $DIR/ranger ~/.config
-# ln -s -i $DIR/sway ~/.config
-# ln -s -i $DIR/vimb ~/.config
-# ln -s -i $DIR/vimrc ~/.vimrc
-# ln -s -i $DIR/waybar ~/.config
-# ln -s -i $DIR/zathura ~/.config
-# ln -s -i $DIR/alacritty ~/.config
-# ln -s -i $DIR/nvim ~/.config
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si
+cd .. && rm -rf yay
+yay -S foot sway-launcher-desktop ly
+
+pip install neovim
+
+systemctl enable bluetooth.service
+sudo systemctl enable ly.service
+
+# make symlinks, e.g., like this.
+ln -s -i $DIR/* ~/.config
+rm ~/.config README.md setup.sh
