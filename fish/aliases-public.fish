@@ -28,4 +28,4 @@ alias xterm="xterm -fa 'Monospace' -fs 18"
 # alias ssh="xterm -fa 'Monospace' -fs 18 -e ssh"
 
 # network
-alias nmtui='nmcli dev wifi rescan & nmtui'
+# alias nmtui='nmcli dev wifi rescan && nmtui'
