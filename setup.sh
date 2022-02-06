@@ -6,7 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # install necessary programs
 sudo pacman -S \
   fish git ranger highlight neovim pass lsd \
-  sway swaylock swayidle waybar xorg-xwayland fuzzel \
+  sway swaylock swayidle waybar xorg-xwayland fuzzel gammastep \
   zathura zathura-pdf-poppler zathura-djvu xournalpp \
   brightnessctl \
   foot \
