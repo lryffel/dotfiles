@@ -17,14 +17,16 @@ sudo pacman -S \
   pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack pavucontrol \
   python python-pip \
   texlive-most \
-  bluez-utils
+  bluez-utils \
+  xorg \
+  lightdm lightdm-gtk-greeter
 
 # install yay
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
 # install necessary aur packages
-yay -S foot ly
+yay -S foot
 
 # set up nvim with vimplug
 pip install neovim
@@ -34,8 +36,10 @@ sh -c 'curl -fLo \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 systemctl enable bluetooth.service
-sudo systemctl enable ly.service
+sudo systemctl enable lightdm.service
 
 # make symlinks
 ln -s -i $DIR/* ~/.config
 rm ~/.config README.md setup.sh
+
+localectl set-x11-keymap ch "" de_nodeadkeys caps:swapescape
