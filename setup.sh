@@ -19,11 +19,14 @@ sudo pacman -S \
   texlive-most \
   bluez-utils
 
+# install yay
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
+# install necessary aur packages
 yay -S foot ly
 
+# set up nvim
 pip install neovim
 
 systemctl enable bluetooth.service
