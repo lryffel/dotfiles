@@ -6,7 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # install necessary programs
 sudo pacman -S \
   fish git ranger highlight neovim pass lsd \
-  sway swaylock swayidle waybar xorg-xwayland \
+  sway swaylock swayidle waybar xorg-xwayland fuzzel \
   zathura zathura-pdf-poppler zathura-djvu xournalpp \
   brightnessctl \
   foot \
@@ -22,7 +22,7 @@ sudo pacman -S \
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
-yay -S foot sway-launcher-desktop ly
+yay -S foot ly
 
 pip install neovim
 
