@@ -26,12 +26,16 @@ cd .. && rm -rf yay
 # install necessary aur packages
 yay -S foot ly
 
-# set up nvim
+# set up nvim with vimplug
 pip install neovim
+sh -c 'curl -fLo \
+  "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
+  --create-dirs \ 
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 systemctl enable bluetooth.service
 sudo systemctl enable ly.service
 
-# make symlinks, e.g., like this.
+# make symlinks
 ln -s -i $DIR/* ~/.config
 rm ~/.config README.md setup.sh
