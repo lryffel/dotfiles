@@ -1,6 +1,6 @@
 # vim : ft=config
 set $terminal 'alacritty'
-set $browser 'brave'
+set $browser 'firefox'
 set $filemanager 'alacritty -e ranger'
 set $mixer 'pavucontrol'
 
@@ -186,8 +186,11 @@ bindsym $mod+b exec $browser
 bindsym $mod+v exec $filemanager
 bindsym $mod+m exec $mixer
 
-# using polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# using i3status
+exec_always --no-startup-id i3status
+bar {
+  status_command i3status
+}
 
 # cosmetics
 default_border pixel 3
