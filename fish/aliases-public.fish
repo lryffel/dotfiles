@@ -27,6 +27,12 @@ alias xterm="xterm -fa 'Monospace' -fs 18"
 # bluetooth
 abbr bc bluetoothctl
 
+# xournalpp
+abbr x xournalpp
+
+# zathura
+abbr z zathura
+
 # pacman
 abbr p pacman
 abbr pq pacman -Qi
@@ -36,6 +42,10 @@ abbr spr sudo pacman -Runs
 
 # systemctl
 abbr sc systemctl
+
+# power
+alias bye="shutdown now"
+alias zzz="systemctl suspend"
 
 # network
 # alias nmtui='nmcli dev wifi rescan && nmtui'

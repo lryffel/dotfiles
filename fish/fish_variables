@@ -20,6 +20,8 @@ SETUVAR _fish_abbr_spu:sudo\x20pacman\x20\x2dSyu
 SETUVAR _fish_abbr_sv:sudo\x20nvim
 SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vim:nvim
+SETUVAR _fish_abbr_x:xournalpp
+SETUVAR _fish_abbr_z:zathura
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:b294bb
