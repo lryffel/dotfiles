@@ -46,6 +46,4 @@ abbr sc systemctl
 # power
 alias bye="shutdown now"
 alias zzz="systemctl suspend"
-
-# network
-# alias nmtui='nmcli dev wifi rescan && nmtui'
+alias logout="swaymsg exit"
