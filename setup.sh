@@ -7,6 +7,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 sudo pacman -S \
   fish git ranger highlight neovim pass lsd \
   sway swaylock swayidle waybar xorg-xwayland fuzzel gammastep \
+  xdg-desktop-portal-wlr \
   zathura zathura-pdf-poppler zathura-djvu xournalpp \
   brightnessctl \
   foot \
