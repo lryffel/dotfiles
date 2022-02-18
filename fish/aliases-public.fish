@@ -9,7 +9,7 @@ abbr vim nvim
 abbr sv sudo nvim
 
 # ls
-alias s='lsd -l'
+abbr s 'lsd -l'
 
 # git
 abbr ga git add
@@ -47,3 +47,6 @@ abbr sc systemctl
 alias bye="shutdown now"
 alias zzz="systemctl suspend"
 alias logout="swaymsg exit"
+
+# open programs
+alias dq="disown & exit"
