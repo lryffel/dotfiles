@@ -5,6 +5,8 @@
 call plug#begin('~/.local/share/nvim/site/plugged')
 " a colorscheme
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
 " tree view
 Plug 'preservim/nerdtree'
 " show git status in nerdtree
@@ -80,7 +82,7 @@ let g:ale_completion_enabled = 1
 
 " statusline
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'dracula',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

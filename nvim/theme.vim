@@ -1,4 +1,4 @@
 " Cosmetics
 """"""""""""
-colorscheme gruvbox 
+colorscheme dracula 
 set background=dark
