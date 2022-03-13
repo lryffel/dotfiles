@@ -9,7 +9,9 @@ set expandtab " spaces rather than tabs
 set shiftwidth=2 " tabs are replaced by 2 spaces
 set tabstop=2 " tab characters encode 2 spaces
 set ruler " always display cursor position
-let &showbreak='---->' " line break symbols
+let &showbreak='↳ ' " line break symbols
+set wrap " enable soft wrapping
+set linebreak
 set timeoutlen=1000 ttimeoutlen=0 " no delay for visual mode
 set hlsearch " highlight searched terms
 set incsearch " highlight as you type
