@@ -5,6 +5,7 @@
     font-family: sans-serif;
     font-size: 11pt;
     min-height: 0;
+    font-weight: bold;
 }
 
 window#waybar {
@@ -37,6 +38,7 @@ window#waybar.hidden {
 #workspaces button.focused {
     background-color: #bd93f9;
     color: #282a36;
+    font-weight:bold;
 }
 
 #workspaces button.urgent {
@@ -62,7 +64,7 @@ window#waybar.hidden {
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 #window,
@@ -84,14 +86,14 @@ window#waybar.hidden {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        /* background-color: #ffffff; */
         color: #000000;
     }
 }
 
 #battery.critical:not(.charging) {
     background-color: #ff5555;
-    color: #ffffff;
+    /* color: #ffffff; */
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -111,6 +113,7 @@ label:focus {
 #battery,
 #battery.charging,
 #network,
+#backlight,
 #clock,
 #pulseaudio,
 #clock  {
@@ -123,6 +126,7 @@ label:focus {
 #temperature,
 #pulseaudio,
 #pulseaudio.muted,
+#backlight,
 #network {
     background-color: #333333;
     color: #cccccc;
