@@ -6,7 +6,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 " a colorscheme
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
+Plug 'dracula/vim',{'as':'dracula'}
 " tree view
 Plug 'preservim/nerdtree'
 " show git status in nerdtree

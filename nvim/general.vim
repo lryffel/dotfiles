@@ -18,7 +18,10 @@ set incsearch " highlight as you type
 set laststatus=2 " make lightline appear
 set showcmd " show what command you're typing
 set smartindent
-set cursorline
+" set cursorline
+if (has("termguicolors"))
+  set termguicolors " make dracula work properly
+endif
 
 filetype plugin indent on " make vim recognize filetypes
 syntax on " syntax highlighting
