@@ -128,17 +128,17 @@ label:focus {
 #pulseaudio.muted,
 #backlight,
 #network {
-    background-color: #333333;
-    color: #cccccc;
+    background-color: #44475a;
+    color: #f8f8f2;
 }
 
 
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
+/* #custom-media { */
+/*     background-color: #66cc99; */
+/*     color: #2a5c45; */
+/*     min-width: 100px; */
+/* } */
 
 
 #temperature.critical {
