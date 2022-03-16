@@ -52,4 +52,4 @@ alias logout="swaymsg exit"
 alias dq="disown & exit"
 
 # windows managers
-abbr sy sway
+abbr sy ~/.config/sway/launch.sh
