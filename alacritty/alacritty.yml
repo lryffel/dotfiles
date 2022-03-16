@@ -1,3 +1,5 @@
+import:
+  - ~/.config/alacritty/dracula.yml
 key_bindings:
   - { key: Escape,  mods: Control|Shift, action: SpawnNewInstance }
     # Plus and Equals cannot be pressed without Shift on swiss keyboards
