@@ -4,3 +4,5 @@ fish/aliases-private.fish
 
 xournalpp/autosave/
 xournalpp/metadata/
+
+*__pycache__*
