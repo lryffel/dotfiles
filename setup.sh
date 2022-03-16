@@ -19,8 +19,7 @@ sudo pacman -S \
   python python-pip \
   texlive-most \
   bluez-utils \
-  xorg \
-  lightdm lightdm-gtk-greeter
+  xorg
 
 # install yay
 git clone https://aur.archlinux.org/yay.git
@@ -37,7 +36,6 @@ sh -c 'curl -fLo \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 systemctl enable bluetooth.service
-sudo systemctl enable lightdm.service
 
 # make symlinks
 ln -s -i $DIR/* ~/.config
