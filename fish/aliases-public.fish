@@ -50,3 +50,6 @@ alias logout="swaymsg exit"
 
 # open programs
 alias dq="disown & exit"
+
+# windows managers
+abbr sy sway
