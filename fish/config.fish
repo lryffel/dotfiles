@@ -7,3 +7,6 @@ source ~/.config/fish/environment-vars.fish
 # aliases
 source ~/.config/fish/aliases-public.fish
 source ~/.config/fish/aliases-private.fish
+
+# login shell behaviour
+source ~/.config/fish/login.fish
