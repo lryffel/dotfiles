@@ -41,4 +41,8 @@ systemctl enable bluetooth.service
 ln -s -i $DIR/* ~/.config
 rm ~/.config README.md setup.sh
 
+# X keyboard settings
 localectl set-x11-keymap ch "" de_nodeadkeys caps:swapescape
+
+# default shell fish
+chsh -s /bin/fish
