@@ -39,6 +39,8 @@ Plug 'dag/vim-fish'
 Plug 'JuliaEditorSupport/julia-vim'
 " csv
 Plug 'chrisbra/csv.vim'
+" treesitter for syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 
@@ -91,3 +93,12 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
 \}
+
+lua << EOF
+  require'nvim-treesitter.configs'.setup {
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
+    },
+  }
+EOF
