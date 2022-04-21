@@ -60,8 +60,6 @@ let g:vimtex_view_method='zathura'
 " let g:vimtex_quickfix_mode=0
 " let g:vimtex_delim_stopline=2500
 let g:vimtex_compiler_progname = 'nvr'
-" figure keybindings
-inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
