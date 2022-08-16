@@ -58,6 +58,7 @@ Keybindings, purple color scheme, starts (and hence depends on) waybar.
 
 ## waybar (Wayland status bar)
 Purple color scheme, some icons.
+Depends on the package `nerd-fonts-complete`.
 
 ## i3 (X window manager)
 Starts (and hence depends on) polybar.
