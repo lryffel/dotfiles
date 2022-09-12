@@ -109,3 +109,8 @@ how to turn it off though.
 ## alacritty (Terminal emulator)
 Just configured so that swiss keyboards can also zoom in.
 
+# Some tricks
+## sage
+To get sage to use the right colors,
+make a file `colors.ipy` in `~/.sage/ipython-5.0.0/profile_default`
+containing the line `%colors Linux`.
