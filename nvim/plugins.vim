@@ -51,7 +51,7 @@ let g:rooter_patterns = ['.git']
 let g:rooter_silent_chdir = 1
 
 " NerdTree ignore
-set wildignore+=*.aux,*.log,*.out,*.synctex.gz,*.toc,*.pdf,*.fls,*.fdb_latexmk,*.blg,*.bbl,*.lock,target
+set wildignore+=*.aux,*.log,*.out,*.synctex.gz,*.toc,*.pdf,*.fls,*.fdb_latexmk,*.blg,*.bbl,*.lock,target,*.sage.py
 let NERDTreeRespectWildIgnore=1
 
 " vimtex
