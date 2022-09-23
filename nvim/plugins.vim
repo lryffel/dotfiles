@@ -4,8 +4,6 @@
 " vim-plug
 call plug#begin('~/.local/share/nvim/site/plugged')
 " a colorscheme
-Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim',{'as':'dracula'}
 " tree view
 Plug 'preservim/nerdtree'
@@ -31,15 +29,12 @@ Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 " repeat surround commands
 Plug 'tpope/vim-repeat'
-" Rust support
-Plug 'rust-lang/rust.vim'
 " fish support
 Plug 'dag/vim-fish'
-" Julia
-Plug 'JuliaEditorSupport/julia-vim'
-" csv
-Plug 'chrisbra/csv.vim'
-" treesitter for syntax highlighting
+" rust doc comments syntax highlighting
+Plug 'rust-lang/rust.vim'
+" syntax highlighting for toml files
+Plug 'cespare/vim-toml'
 call plug#end()
 
 
@@ -75,9 +70,17 @@ let g:NERDTreeMinimalUI=1
 let g:ale_linters = {
   \    'tex': ['chktex', 'lacheck'],
   \    'bib': ['bibclean'],
-  \    'rust': ['analyzer']
+  \    'rust': ['analyzer', 'cargo']
 \}
+set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_fix_on_save = 1
+let g:ale_rust_cargo_use_clippy = 1
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'rust': ['rustfmt'],
+\}
 
 " statusline
 let g:lightline = {

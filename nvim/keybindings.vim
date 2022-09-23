@@ -33,6 +33,12 @@ nnoremap <leader>gc :G commit<CR>
 nnoremap <leader>gp :G push<CR>
 nnoremap <leader>gf :G pull<CR>
 
+" ale
+nnoremap <silent> <leader>ad :ALEGoToDefinition<CR>
+nnoremap <silent> <leader>au :ALEFindReferences<CR>
+nnoremap <silent> <leader>ar :ALERename<CR>
+nnoremap <silent> <leader>ah :ALEHover<CR>
+
 " searching
 nnoremap <leader>s /
 " (turn off highlighting till next search)
