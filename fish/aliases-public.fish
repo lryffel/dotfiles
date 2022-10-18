@@ -53,3 +53,6 @@ alias dq="disown & exit"
 
 # windows managers
 abbr sy ~/.config/sway/launch.sh
+
+# kill
+abbr ka "killall"
