@@ -35,6 +35,8 @@ Plug 'dag/vim-fish'
 Plug 'rust-lang/rust.vim'
 " syntax highlighting for toml files
 Plug 'cespare/vim-toml'
+" exact number of search results
+Plug 'google/vim-searchindex'
 call plug#end()
 
 
@@ -93,4 +95,3 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
 \}
-
