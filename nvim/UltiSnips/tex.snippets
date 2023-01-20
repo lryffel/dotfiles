@@ -31,8 +31,8 @@ def create_fig_minipages(snip):
 
     for i in range(placeholders_amount):
         anon_snippet_body += '  \\begin{minipage}{' + formatted_parts + '\\textwidth}\n    \centering\n'
-        anon_snippet_body += '\n    $' + str(i+3) + '\n  \end{minipage}%\n' 
-    
+        anon_snippet_body += '\n    $' + str(i+3) + '\n  \end{minipage}%\n'
+
 
     anon_snippet_body += '  \caption{$1}%\n  \label{fig:$2}\n\end{figure}'
 
@@ -90,7 +90,7 @@ snippet ssse* "subsubsection*" bA
 $0
 endsnippet
 
- 
+
 # math
 context "not math()"
 snippet < "inline math" A
@@ -315,6 +315,11 @@ snippet NN "\mathbb{N}" iA
 endsnippet
 
 context "math()"
+snippet DD "\mathbb{D}" iA
+\mathbb{D}$0
+endsnippet
+
+context "math()"
 snippet ZZ "\mathbb{Z}" iA
 \mathbb{Z}$0
 endsnippet
@@ -429,7 +434,7 @@ snippet fig "figure" b
 $0
 endsnippet
 
-post_jump "create_fig_minipages(snip)"  
+post_jump "create_fig_minipages(snip)"
 snippet "fig(\d+)" "figure with n minipages" br
 `!p snip.rv = match.group(1)`
 endsnippet
@@ -517,7 +522,7 @@ $0
     \toprule
     1 & 2 & 3 & 4 & 5 & Total \\\\
     \midrule
-    ${4:ex1} & ${6:ex2} & ${8:ex3} & 
+    ${4:ex1} & ${6:ex2} & ${8:ex3} &
     ${10:ex4} & ${12:ex5} & ${13:total} \\\\
     \bottomrule
   \end{tabular}
