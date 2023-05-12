@@ -1,0 +1,35 @@
+$background: #282a36;
+$primary: #bd93f9;
+$comment: #6272a4;
+$currentline: #44475a;
+
+$border-radius: 10px;
+
+
+.bar {
+  border-radius: $border-radius;
+  background-color: $background;
+}
+
+.workspaces-widget {
+  border-radius: $border-radius;
+  background-color: $background;
+}
+.workspace-entry {
+  margin-right: 3px;
+}
+.workspace-entry.occupied {
+  border-radius: $border-radius;
+  background-color: $currentline;
+}
+.workspace-entry.current {
+  border-radius: $border-radius;
+  background-color: $primary;
+  color: $background;
+}
+
+.time-hour {
+  border-radius: $border-radius;
+  background-color: $primary;
+  color: $background;
+}

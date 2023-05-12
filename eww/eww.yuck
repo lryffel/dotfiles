@@ -1,0 +1,50 @@
+(defwindow bar
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "10px"
+                               :width "1900px"
+                               :height "30px"
+                               :anchor "bottom center")
+           :stacking "fg"
+           ; :reserve (struts :distance "40px" :side "bottom")
+           :windowtype "dock"
+           :wm-ignore false
+           :exclusive true
+   (box
+     (workspaces)
+     (placeholder :text "")
+     (placeholder :text "cpu/ram/bat")
+     (placeholder :text "")
+     (clock)
+   )
+)
+
+(defwidget placeholder [text]
+  (box :class "placeholder"
+    text
+  )
+)
+
+(defwidget clock []
+	(box :halign "end"
+    (button	:onclick "" :class "time-hour" time)
+  )
+)
+(defpoll time	:interval "1s"	"date '+%H:%M'")
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces.sh")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly true
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}")
+          )
+        )
+      )
+    )
+  )
+)
