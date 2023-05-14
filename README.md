@@ -75,7 +75,7 @@ accordingly.
 
 To get mouse tapping working, configure it in
 `/etc/X11/xorg.conf.d`. Create a file
-there called `30-touchpad.conf` and 
+there called `30-touchpad.conf` and
 make it contain the following lines:
 
 ```xf86conf
@@ -108,6 +108,13 @@ how to turn it off though.
 
 ## alacritty (Terminal emulator)
 Just configured so that swiss keyboards can also zoom in.
+
+## hyprland (Window manager)
+Basic configuration and keybindings, as well as dracula colorscheme
+
+## eww (Status bar)
+Configured to run on hyprland.
+Requires `bash`, `awk`, `stdbuf`, `grep`, `seq`, `socat`, `jq`, and Python 3 to display the workspaces correctly.
 
 # Some tricks
 ## sage
