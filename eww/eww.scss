@@ -1,7 +1,13 @@
 $background: #282a36;
 $primary: #bd93f9;
+$secondary: #ff79c6;
 $comment: #6272a4;
 $currentline: #44475a;
+$foreground: #f8f8f2;
+$green: #50fa7b;
+$cyan: #8be9fd;
+$red: #ff5555;
+$orange: #ffb86c;
 
 $border-radius: 10px;
 
@@ -9,27 +15,98 @@ $border-radius: 10px;
 .bar {
   border-radius: $border-radius;
   background-color: $background;
+  font-weight: bold;
 }
 
 .workspaces-widget {
   border-radius: $border-radius;
   background-color: $background;
+  color: $foreground;
+  min-width: 10px;
 }
 .workspace-entry {
-  margin-right: 3px;
+  border-radius: $border-radius;
+  border-style: solid;
+  border-width: 2px;
+  // margin-right: 3px;
+  border-color: $background;
 }
 .workspace-entry.occupied {
-  border-radius: $border-radius;
   background-color: $currentline;
 }
 .workspace-entry.current {
-  border-radius: $border-radius;
-  background-color: $primary;
+  // background-color: $primary;
+  // color: $background;
+  border-image-slice: 2;
+  background: linear-gradient(to right, $primary, $secondary) border-box;
+  border: 2px solid transparent;
+  border-radius: 10px;
   color: $background;
+  // display: inline-block;
 }
 
 .time-hour {
   border-radius: $border-radius;
-  background-color: $primary;
+  background: linear-gradient(to right, $primary, $secondary) padding-box;
+  // border-style: solid;
+  // border-width: 2px;
+  // border-color: $primary;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 40px;
+  // background-color: $primary;
   color: $background;
+}
+
+.time-hour:hover {
+  background-color: $currentline;
+}
+
+.cpu {
+  border-radius: 10px;
+  padding: 5px;
+  margin-right: 2px;
+  // color: $background;
+  // background: linear-gradient(to right, $primary, $secondary) border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 80px;
+}
+
+.cpu.critical {
+  background: linear-gradient(to right, $red, $orange) border-box;
+  color: $background;
+}
+
+.battery {
+  border-width: 2px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 2px;
+  // color: $foreground;
+  // color:primary;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 80px;
+}
+
+.battery.discharging {
+  color: $foreground;
+  border-radius: 10px;
+  margin-right: 2px;
+  color: $background;
+  background: linear-gradient(to right, $primary, $secondary) border-box;
+}
+
+.battery.charging {
+  background: linear-gradient(to right, $green, $cyan) border-box;
+}
+
+.battery.critical {
+  background: linear-gradient(to right, $red, $orange) border-box;
+}
+
+.circular-bar-label {
+  padding: 8px;
+  font-size: 12;
 }

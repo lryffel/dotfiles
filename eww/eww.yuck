@@ -13,10 +13,54 @@
    (box
      (workspaces)
      (placeholder :text "")
-     (placeholder :text "cpu/ram/bat")
+     ; (placeholder :text "cpu/ram/bat")
+     (mid)
      (placeholder :text "")
      (clock)
    )
+)
+
+(defwidget mid []
+  (box
+    :halign "center"
+    (cpu)
+    (battery)
+  )
+)
+
+(defwidget cpu []
+  (box
+    :class "cpu ${EWW_CPU.avg < 50 ? "" : "critical"}"
+    ; :valign "center"
+    (label :text "${round(EWW_CPU.avg, 0)}%")
+    (circular-progress
+      :start-at "50"
+      :thickness "3"
+      :clockwise true
+      :value {EWW_CPU.avg}
+      (label
+        :class "circular-bar-label"
+        :text "C"
+      )
+    )
+  )
+)
+
+(defwidget battery []
+  (box
+    :class "battery ${EWW_BATTERY.BAT0.status == "Discharging" ? "discharging" : "charging"} ${EWW_BATTERY.BAT0.capacity < 15 ? "critical" : ""}"
+    ; :valign "center"
+    (circular-progress
+      :start-at "50"
+      :thickness "3"
+      :clockwise true
+      :value {EWW_BATTERY.BAT0.capacity}
+      (label
+        :class "circular-bar-label"
+        :text "B")
+    )
+    (label :text "${EWW_BATTERY.BAT0.capacity}%")
+  )
 )
 
 (defwidget placeholder [text]
@@ -26,8 +70,9 @@
 )
 
 (defwidget clock []
-	(box :halign "end"
-    (button	:onclick "" :class "time-hour" time)
+	(box
+    :halign "end"
+    (label :class "time-hour" :text time)
   )
 )
 (defpoll time	:interval "1s"	"date '+%H:%M'")
@@ -35,8 +80,11 @@
 (deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces.sh")
 (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace.sh")
 (defwidget workspaces []
-  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}" :class "workspaces-widget"
-    (box :space-evenly true
+  (eventbox
+    ; :onscroll "bash ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}"
+    :class "workspaces-widget"
+    (box
+      :space-evenly true
       (label :text "${workspaces}${current_workspace}" :visible false)
       (for workspace in workspaces
         (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
