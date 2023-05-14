@@ -9,7 +9,8 @@ abbr vim nvim
 abbr sv sudo nvim
 
 # ls
-abbr s 'lsd -l'
+abbr s 'exa -l'
+abbr sa 'exa -la'
 
 # git
 abbr ga git add
