@@ -5,8 +5,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # install necessary programs
 sudo pacman -S \
-  fish git ranger highlight neovim pass lsd \
+  fish git ranger highlight neovim pass exa \
   sway swaylock swayidle waybar xorg-xwayland fuzzel gammastep \
+  base-devel \
   xdg-desktop-portal-wlr \
   zathura zathura-pdf-poppler zathura-djvu xournalpp \
   brightnessctl \
@@ -17,9 +18,10 @@ sudo pacman -S \
   cadence jack2 a2jmidid \
   pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack pavucontrol \
   python python-pip \
-  texlive-most \
+  texlive \
   bluez-utils \
-  xorg
+  xorg \
+  python-neovim
 
 # install yay
 git clone https://aur.archlinux.org/yay.git
@@ -32,7 +34,7 @@ yay -S foot
 pip install neovim
 sh -c 'curl -fLo \
   "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
-  --create-dirs \ 
+  --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 systemctl enable bluetooth.service
