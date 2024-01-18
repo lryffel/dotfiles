@@ -48,18 +48,18 @@
 
 (defwidget battery []
   (box
-    :class "battery ${EWW_BATTERY.BAT0.status == "Discharging" ? "discharging" : "charging"} ${EWW_BATTERY.BAT0.capacity < 15 ? "critical" : ""}"
+    :class "battery ${EWW_BATTERY.BAT0.status == "Discharging" || EWW_BATTERY.BAT1.status == "Discharging" ? "discharging" : "charging"} ${EWW_BATTERY.total_avg < 20 ? "critical" : ""}"
     ; :valign "center"
     (circular-progress
       :start-at "50"
       :thickness "3"
       :clockwise true
-      :value {EWW_BATTERY.BAT0.capacity}
+      :value {EWW_BATTERY.total_avg}
       (label
         :class "circular-bar-label"
         :text "B")
     )
-    (label :text "${EWW_BATTERY.BAT0.capacity}%")
+    (label :text "${round(EWW_BATTERY.total_avg, 0)}%")
   )
 )
 
