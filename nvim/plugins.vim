@@ -83,6 +83,10 @@ let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'rust': ['rustfmt'],
 \}
+let g:ale_echo_msg_format = '%s (%linter%)'
+let g:ale_linters = {
+      \ 'cpp': ['clangcheck', 'clangd', 'clangtidy', 'clazy', 'cppcheck', 'cpplint', 'cquery', 'cspell', 'flawfinder'],
+\}
 
 " statusline
 let g:lightline = {
