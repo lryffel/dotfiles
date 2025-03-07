@@ -1,3 +1,0 @@
-" Cosmetics
-""""""""""""
-colorscheme dracula 
