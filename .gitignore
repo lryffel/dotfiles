@@ -1,4 +1,4 @@
-nvim/.*
+nvim/lazy-lock.json
 
 fish/aliases-private.fish
 
