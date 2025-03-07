@@ -22,6 +22,10 @@ abbr gp git push
 abbr gd git diff
 abbr gP git pull
 
+# safety
+abbr mv mv -i
+abbr cp cp -i
+
 # xterm
 alias xterm="xterm -fa 'Monospace' -fs 18"
 
