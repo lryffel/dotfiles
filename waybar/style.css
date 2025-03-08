@@ -3,6 +3,7 @@
 @define-color pink       #f5c2e7;
 @define-color purple     #cba6f7;
 @define-color rosewater  #f5e0dc;
+@define-color flamingo   #f2cdcd;
 @define-color red        #f38ba8;
 @define-color surface    #313244;
 
@@ -44,7 +45,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-    background-color: @rosewater;
+    background-color: @flamingo;
     color: @background;
     font-weight:bold;
 }
@@ -125,7 +126,7 @@ label:focus {
 #clock,
 #pulseaudio,
 #clock  {
-    background-color: @rosewater;
+    background-color: @flamingo;
     color: @background;
 }
 
