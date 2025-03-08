@@ -1,4 +1,7 @@
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 local lua_ls_setup = {
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -49,8 +52,12 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup(lua_ls_setup)
-      lspconfig.texlab.setup({})
-      lspconfig.ltex.setup({})
+      lspconfig.texlab.setup({
+        capabilities = capabilities
+      })
+      lspconfig.ltex.setup({
+        capabilities = capabilities
+      })
 
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
     end,
@@ -66,7 +73,7 @@ return {
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.stylua,
-          null_ls.builtins.completion.spell,
+          -- null_ls.builtins.completion.spell,
         },
       })
 
