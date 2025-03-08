@@ -38,4 +38,4 @@ key = "D"
 mods = "Alt"
 
 [general]
-import = ["/home/levi/.config/alacritty/catppuccin-mocha.toml"]
+import = ["/home/levi/.config/alacritty/catppuccin.toml"]
