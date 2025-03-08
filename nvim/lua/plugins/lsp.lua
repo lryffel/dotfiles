@@ -71,7 +71,7 @@ return {
       })
 
       -- Optional: Map a key for manual formatting
-      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { buffer = 0 })
+      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
     end,
-  }
+  },
 }
