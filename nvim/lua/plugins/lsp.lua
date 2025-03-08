@@ -2,10 +2,10 @@ local lua_ls_setup = {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { "vim" }
-      }
-    }
-  }
+        globals = { "vim" },
+      },
+    },
+  },
 }
 
 return {
@@ -13,7 +13,7 @@ return {
     "Williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "Williamboman/mason-lspconfig.nvim",
@@ -23,9 +23,9 @@ return {
           "lua_ls",
           "texlab",
           "ltex",
-        }
+        },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -35,8 +35,7 @@ return {
       lspconfig.texlab.setup({})
       lspconfig.ltex.setup({})
 
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
-

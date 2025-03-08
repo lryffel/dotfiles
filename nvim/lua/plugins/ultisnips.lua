@@ -1,4 +1,5 @@
 return {
-  'Sirver/ultisnips', event = { 'InsertEnter' },
-  config = function() end
+  "Sirver/ultisnips",
+  event = { "InsertEnter" },
+  config = function() end,
 }
