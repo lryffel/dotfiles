@@ -22,6 +22,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "texlab",
+          "ltex",
         }
       })
     end
@@ -32,6 +33,7 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup(lua_ls_setup)
       lspconfig.texlab.setup({})
+      lspconfig.ltex.setup({})
 
       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
     end
