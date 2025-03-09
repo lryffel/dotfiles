@@ -9,6 +9,10 @@ return {
   opts = {
     filesystem = {
       enable_normal_mode_for_input = true,
+      filtered_items = {
+        hide_by_pattern = { "*.pdf" }, -- Hide all PDF files
+        -- Other filtering options can be added here
+      },
     },
   },
 }
