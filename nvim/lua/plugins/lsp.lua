@@ -48,19 +48,19 @@ return {
   },
 
   -- add ltex_extra for extended dictionaries and additional rules
-  {
-    "barreiroleo/ltex_extra.nvim",
-    ft = { "markdown", "tex" },
-    dependencies = { "neovim/nvim-lspconfig" },
-    config = function()
-      require("ltex_extra").setup {
-        server_opts = {
-          capabilities = capabilities,
-          on_attach = function() end,
-        },
-      }
-    end
-  },
+  -- {
+  --   "barreiroleo/ltex_extra.nvim",
+  --   ft = { "markdown", "tex" },
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  --   config = function()
+  --     require("ltex_extra").setup {
+  --       server_opts = {
+  --         capabilities = capabilities,
+  --         on_attach = function() end,
+  --       },
+  --     }
+  --   end
+  -- },
 
   -- configures LSPs
   {
@@ -73,16 +73,16 @@ return {
       })
       lspconfig.ltex.setup({
         capabilities = capabilities,
-        on_attach = function()
-          require("ltex_extra").setup()
-        end,
-        settings = {
-          ltex = {
-            -- Integrate ltex_extra’s dictionaries and rules
-            dictionary = require("ltex_extra").dictionary,
-            additionalRules = require("ltex_extra").additionalRules,
-          },
-        },
+        -- on_attach = function()
+        --   require("ltex_extra").setup()
+        -- end,
+        -- settings = {
+        --   ltex = {
+        --     -- Integrate ltex_extra’s dictionaries and rules
+        --     dictionary = require("ltex_extra").dictionary,
+        --     additionalRules = require("ltex_extra").additionalRules,
+        --   },
+        -- },
       })
       lspconfig.tinymist.setup({
         capabilities = capabilities,
