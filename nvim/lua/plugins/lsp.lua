@@ -1,116 +1,129 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local lua_ls_setup = {
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
+-- Define LSP servers and their settings
+local servers = {
+  lua_ls = {
+    settings = {
+      Lua = { diagnostics = { globals = { "vim" } } },
+    },
+  },
+  texlab = {},
+  ltex = {},
+  tinymist = {
+    settings = {
+      exportPdf = "onType",
+      formatterMode = "typstyle",
     },
   },
 }
 
 return {
-  -- installer for various LSPs, linters, and formatters
+  -- Mason installer
   {
-    "Williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
+    "williamboman/mason.nvim",
+    config = true,
   },
 
-  -- ensures that LSPs are installed
+  -- Ensure LSPs are installed
   {
-    "Williamboman/mason-lspconfig.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "texlab",
-          "ltex",
-          "tinymist",
-        },
+        ensure_installed = vim.tbl_keys(servers),
+      })
+
+      -- Use the new native LSP config API
+      local configs = vim.lsp.configs
+
+      for name, opts in pairs(servers) do
+        opts.capabilities = capabilities
+        configs[name] = vim.tbl_deep_extend("force", {}, vim.lsp.config[name] or {}, opts)
+      end
+
+      -- Start all installed LSPs automatically
+      require("mason-lspconfig").setup_handlers({
+        function(server)
+          vim.lsp.start(servers[server])
+        end,
       })
     end,
   },
 
-  -- ensures that other tools from Mason are installed
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    config = function()
-      require("mason-tool-installer").setup({
-        ensure_installed = {
-          "stylua",
-        },
-      })
-    end,
-  },
-
-  -- add ltex_extra for extended dictionaries and additional rules
-  -- {
-  --   "barreiroleo/ltex_extra.nvim",
-  --   ft = { "markdown", "tex" },
-  --   dependencies = { "neovim/nvim-lspconfig" },
-  --   config = function()
-  --     require("ltex_extra").setup {
-  --       server_opts = {
-  --         capabilities = capabilities,
-  --         on_attach = function() end,
-  --       },
-  --     }
-  --   end
-  -- },
-
-  -- configures LSPs
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup(lua_ls_setup)
-      lspconfig.texlab.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.ltex.setup({
-        capabilities = capabilities,
-        -- on_attach = function()
-        --   require("ltex_extra").setup()
-        -- end,
-        -- settings = {
-        --   ltex = {
-        --     -- Integrate ltex_extra’s dictionaries and rules
-        --     dictionary = require("ltex_extra").dictionary,
-        --     additionalRules = require("ltex_extra").additionalRules,
-        --   },
-        -- },
-      })
-      lspconfig.tinymist.setup({
-        capabilities = capabilities,
-        settings = {
-          exportPdf = "onType",
-          formatterMode = "typstyle",
-        },
-      })
-
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-    end,
-  },
-
-  -- downloads formatters and linters as if they were LSPs
+  -- Optional tools like stylua, null-ls, etc.
   {
     "nvimtools/none-ls.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
     config = function()
       local null_ls = require("null-ls")
-
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.stylua,
-          -- null_ls.builtins.completion.spell,
         },
       })
+      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    end,
+  },
+}
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Optional: Map a key for manual formatting
+-- Define server configurations
+local servers = {
+  lua_ls = {
+    settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+  },
+  texlab = {},
+  ltex = {},
+  tinymist = {
+    settings = {
+      exportPdf = "onType",
+      formatterMode = "typstyle",
+    },
+  },
+}
+
+return {
+  {
+    "williamboman/mason.nvim",
+    config = true,
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = vim.tbl_keys(servers),
+      })
+
+      -- Support both new and old APIs
+      local lspconfig = vim.lsp.configs or require("lspconfig")
+
+      require("mason-lspconfig").setup_handlers({
+        function(server)
+          local opts = servers[server] or {}
+          opts.capabilities = capabilities
+
+          if vim.lsp.configs then
+            -- New API (Neovim 0.11+)
+            vim.lsp.start(opts)
+          else
+            -- Old API (Neovim <= 0.10)
+            require("lspconfig")[server].setup(opts)
+          end
+        end,
+      })
+    end,
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.stylua,
+        },
+      })
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
     end,
   },
