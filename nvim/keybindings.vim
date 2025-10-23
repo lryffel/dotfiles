@@ -1,8 +1,12 @@
 " Keybindings
 """""""""""""
+" leaders
+let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 
 " files
 nnoremap <leader>fs :write<CR>
+inoremap <C-l> <esc>:write<CR>a
 
 " opening things
 nnoremap <leader>op :Neotree toggle<CR>
@@ -23,8 +27,28 @@ nnoremap <leader>qQ :q!<CR>
 nnoremap <leader>qa :qa<CR>
 nnoremap <leader>qA :qa!<CR>
 
+" git
+nnoremap <leader>ga :G add .<CR>
+nnoremap <leader>gc :G commit<CR>
+nnoremap <leader>gp :G push<CR>
+nnoremap <leader>gf :G pull<CR>
+
+" ale
+nnoremap <silent> <leader>ad :ALEGoToDefinition<CR>
+nnoremap <silent> <leader>au :ALEFindReferences<CR>
+nnoremap <silent> <leader>ar :ALERename<CR>
+nnoremap <silent> <leader>ah :ALEHover<CR>
+
 " searching
+nnoremap <leader>s /
+" (turn off highlighting till next search)
 nnoremap <leader>h :noh<CR>
+
+" clipboard
+xnoremap <leader>cy "+y
+xnoremap <C-c> "+y
+nnoremap <leader>cp "+p
+inoremap <C-v> <C-r>+
 
 " autocomplete
 "inoremap <C-Space> <C-x><C-o>
