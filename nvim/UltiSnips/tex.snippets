@@ -44,10 +44,6 @@ endglobal
 
 
 
-snippet " "latex quote" iA
-\`\`$1''$0
-endsnippet
-
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
   $0
@@ -94,12 +90,7 @@ endsnippet
 # math
 context "not math()"
 snippet < "inline math" A
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ')']:
-	snip.rv = ' '
-else:
-	snip.rv = ''
-`$2
+$${1}$$2
 endsnippet
 
 snippet \[ "display math" bA

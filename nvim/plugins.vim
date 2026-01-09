@@ -51,6 +51,15 @@ let g:vimtex_view_method='zathura'
 " let g:vimtex_quickfix_mode=0
 " let g:vimtex_delim_stopline=2500
 let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_compiler_latexmk = {
+  \ 'options' : [
+  \   '-shell-escape',
+  \   '-verbose',
+  \   '-file-line-error',
+  \   '-synctex=1',
+  \   '-interaction=nonstopmode',
+  \ ],
+  \}
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
