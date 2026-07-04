@@ -93,7 +93,6 @@ let g:ale_linters = {
 
 " statusline
 let g:lightline = {
-  \ 'colorscheme': 'catppuccin',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
