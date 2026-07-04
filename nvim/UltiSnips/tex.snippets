@@ -261,26 +261,6 @@ endsnippet
 
 # lists
 context "math()"
-snippet some "finitely many" iA
-$1_{$2}, \\dots, $1_{$3}$0
-endsnippet
-
-context "math()"
-snippet many "infinitely many" iA
-$1_{$2}, $1_{$3}, \\dots$0
-endsnippet
-
-context "math()"
-snippet seq "sequence" wA
-{($1_{$2})}_{$3 \\in \\mathbb{N}}$0
-endsnippet
-
-context "math()"
-snippet homo "homogeneous coordinates" iA
-[$1_{$2} : \\dots : $1_{$3}]
-endsnippet
-
-context "math()"
 snippet mat "pmatrix" bA
 \\begin{pmatrix}
   $1
@@ -407,115 +387,8 @@ snippet "fig(\d+)" "figure with n minipages" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
-snippet inc "includegraphics" b
-\\includegraphics{$0}
-endsnippet
-
 snippet tikz "tikzpicture" b
 \\begin{tikzpicture}
   $0
 \\end{tikzpicture}
-endsnippet
-
-# templates
-snippet tempmain "template for a main document" b
-\\documentclass[a4paper]{$1}
-
-\\title{$2}
-\\author{$3}
-\\date{$4}
-
-\\usepackage{amsmath}
-\\usepackage{amsfonts}
-\\usepackage{amssymb}
-\\usepackage{amsthm}
-
-\\usepackage{enumerate}
-\\usepackage{booktabs}
-\\usepackage{graphicx}
-\\usepackage[hidelinks]{hyperref}
-
-\\newtheorem{theorem}{Theorem}[section]
-\\newtheorem{proposition}[theorem]{Proposition}
-\\newtheorem{lemma}[theorem]{Lemma}
-
-\\theoremstyle{definition}
-\\newtheorem{definition}[theorem]{Definition}
-
-\\begin{document}
-\\maketitle
-\\tableofcontents
-
-$0
-\\end{document}
-endsnippet
-
-snippet temptikz "a standalone tikz file" b
-\\documentclass[tikz]{standalone}
-
-\\begin{document}
-\\begin{tikzpicture}
-$0
-\\end{tikzpicture}
-\\end{document}
-endsnippet
-
-snippet tempsub "subfile" b
-\\documentclass[$1]{subfile}
-
-\\begin{document}
-$0
-\\end{document}
-endsnippet
-
-snippet tempcorr "corrections" b
-\\documentclass[a4paper]{article}
-
-\\usepackage[german]{babel}
-\\usepackage{amssymb}
-\\usepackage{amsmath}
-\\usepackage{booktabs}
-
-\\title{Korrekturen Serie ${1:x}}
-\\author{${2:name-student}}
-
-\\begin{document}
-\\maketitle
-
-$0
-
-\\begin{table*}[h]
-  \\centering
-  \\begin{tabular}{cccccc}
-    \\toprule
-    1 & 2 & 3 & 4 & 5 & Total \\\\
-    \\midrule
-    ${4:ex1} & ${6:ex2} & ${8:ex3} &
-    ${10:ex4} & ${12:ex5} & ${13:total} \\\\
-    \\bottomrule
-  \\end{tabular}
-\\end{table*}
-
-\\section*{Aufgabe 1}
-$3
-
-\\section*{Aufgabe 2}
-$5
-
-\\section*{Aufgabe 3}
-$7
-
-\\section*{Aufgabe 4}
-$9
-
-\\section*{Aufgabe 5}
-$11
-
-\\end{document}
-endsnippet
-
-
-post_jump "create_row_placeholders(snip)"
-snippet "tr(\d+)" "latex table row variable" br
-`!p snip.rv = match.group(1)`
 endsnippet
