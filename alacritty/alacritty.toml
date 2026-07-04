@@ -39,3 +39,8 @@ mods = "Alt"
 
 [general]
 import = ["/home/levi/.config/alacritty/catppuccin.toml"]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
