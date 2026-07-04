@@ -1,6 +1,7 @@
 # General settings
 set synctex true
-set synctex-editor-command "nvim +%{line} %{input}"
+set synctex-editor-command "nvim --server %{server} --remote +%{line} %{input}"
+
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
