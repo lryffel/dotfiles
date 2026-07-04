@@ -17,14 +17,4 @@ require("neo-tree").setup({
     hijack_netrw_behavior = "open_default",
   },
 })
-
-
--- Optional: open Neo-tree automatically on start when no file specified
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    if vim.fn.argc() == 0 then
-      vim.cmd("Neotree show")
-    end
-  end,
-})
 EOF
