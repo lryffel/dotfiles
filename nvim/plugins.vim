@@ -31,6 +31,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 " ui
 Plug 'MunifTanjim/nui.nvim'
+" svelte
+Plug 'evanleck/vim-svelte'
 call plug#end()
 
 
@@ -75,7 +77,12 @@ let g:NERDTreeMinimalUI=1
 let g:ale_linters = {
   \    'tex': ['chktex', 'lacheck'],
   \    'bib': ['bibclean'],
-  \    'rust': ['analyzer', 'cargo']
+  \    'rust': ['analyzer', 'cargo'],
+  \    'svelte': ['svelte-language-server', 'eslint'],
+  \    'typescript': ['typescript-language-server', 'eslint'],
+  \    'typescriptreact': ['typescript-language-server', 'eslint'],
+  \    'javascript': ['typescript-language-server', 'eslint'],
+  \    'cpp': ['clangcheck', 'clangd', 'clangtidy', 'clazy', 'cppcheck', 'cpplint', 'cquery', 'cspell', 'flawfinder'],
 \}
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 1
@@ -85,11 +92,11 @@ let g:ale_rust_cargo_use_clippy = 1
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'rust': ['rustfmt'],
+      \ 'svelte': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'eslint'],
+      \ 'javascript': ['prettier', 'eslint'],
 \}
 let g:ale_echo_msg_format = '%s (%linter%)'
-let g:ale_linters = {
-      \ 'cpp': ['clangcheck', 'clangd', 'clangtidy', 'clazy', 'cppcheck', 'cpplint', 'cquery', 'cspell', 'flawfinder'],
-\}
 
 " statusline
 let g:lightline = {
