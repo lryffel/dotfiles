@@ -5,7 +5,7 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        integrations = { gitsigns = true },
+        integrations = { gitsigns = true, treesitter = true, cmp = true },
       })
       vim.cmd.colorscheme("catppuccin")
     end,
@@ -15,13 +15,13 @@ return {
     "SirVer/ultisnips",
     init = function()
       vim.g.UltiSnipsExpandTrigger = "<tab>"
-      vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
-      vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
-      vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/UltiSnips" }
+      vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
+      vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+      vim.g.UltiSnipsSnippetDirectories = { vim.fn.stdpath("config") .. "/UltiSnips" }
     end,
   },
 
-  { "tpope/vim-surround", keys = { "s", "S" } },
+  { "tpope/vim-surround", keys = { "ds", "cs", "ys" } },
 
   {
     "lervag/vimtex",
@@ -43,47 +43,117 @@ return {
   },
 
   {
-    "dense-analysis/ale",
-    event = "BufReadPost",
-    init = function()
-      vim.g.ale_linters = {
-        tex = { "lacheck" },
-        bib = { "bibclean" },
-        rust = { "analyzer", "cargo" },
-        svelte = { "svelte-language-server", "eslint" },
-        typescript = { "typescript-language-server", "eslint" },
-        typescriptreact = { "typescript-language-server", "eslint" },
-        javascript = { "typescript-language-server", "eslint" },
-        cpp = {
-          "clangcheck",
-          "clangd",
-          "clangtidy",
-          "clazy",
-          "cppcheck",
-          "cpplint",
-          "cquery",
-          "cspell",
-          "flawfinder",
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
+    config = function()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      vim.lsp.config("*", { capabilities = capabilities })
+
+      for _, server in ipairs({ "ts_ls", "eslint", "lua_ls", "rust_analyzer", "texlab" }) do
+        pcall(vim.lsp.enable, server)
+      end
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+    },
+    config = function()
+      local cmp = require("cmp")
+
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body)
+          end,
         },
-      }
-      vim.g.ale_fix_on_save = 1
-      vim.g.ale_rust_cargo_use_clippy = 1
-      vim.g.ale_fixers = {
-        ["*"] = { "remove_trailing_lines", "trim_whitespace" },
-        rust = { "rustfmt" },
-        svelte = { "prettier", "eslint" },
-        typescript = { "prettier", "eslint" },
-        javascript = { "prettier", "eslint" },
-      }
-      vim.g.ale_echo_msg_format = "%s (%linter%)"
-      vim.g.ale_completion_enabled = 1
-      vim.g.ale_completion_autoimport = 1
-      vim.opt.omnifunc = "ale#completion#OmniFunc"
+        mapping = cmp.mapping.preset.insert({
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "path" },
+        }),
+      })
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = { { name = "buffer" } },
+      })
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources(
+          { { name = "path" } },
+          { { name = "cmdline" } }
+        ),
+      })
+    end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "BufReadPost",
+    config = function()
+      require("nvim-treesitter").setup({
+        ensure_installed = {
+          "lua", "vim", "vimdoc", "javascript", "typescript", "tsx",
+          "rust", "python", "svelte", "html", "css", "json", "yaml",
+          "markdown", "markdown_inline", "bash", "c", "cpp", "toml",
+        },
+        highlight = { enable = true },
+        indent = { enable = true },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
+            scope_incremental = false,
+            node_decremental = "<bs>",
+          },
+        },
+      })
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+    keys = {
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+      { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+      { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
+      { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+      { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep string" },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = { "node_modules", ".git/", "target/" },
+        },
+      })
     end,
   },
 
   {
     "itchyny/lightline.vim",
+    dependencies = { "tpope/vim-fugitive" },
     init = function()
       vim.cmd([[
         function! GitBranch()
@@ -149,8 +219,8 @@ return {
     end,
   },
 
+  { "tpope/vim-fugitive", cmd = { "Git", "G" } },
   { "tpope/vim-repeat", event = "VeryLazy" },
-
   { "evanleck/vim-svelte", ft = "svelte" },
 
   { "nvim-lua/plenary.nvim", lazy = true },
