@@ -75,7 +75,7 @@ let g:NERDTreeMinimalUI=1
 
 " ale
 let g:ale_linters = {
-  \    'tex': ['chktex', 'lacheck'],
+  \    'tex': ['lacheck'],
   \    'bib': ['bibclean'],
   \    'rust': ['analyzer', 'cargo'],
   \    'svelte': ['svelte-language-server', 'eslint'],
