@@ -13,11 +13,11 @@ map("n", "<leader>op", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
 map("n", "<leader>ot", ":silent !alacritty &<CR>", { desc = "Open terminal" })
 
 -- Window navigation
-map("n", "<leader>ww", "<C-w><C-w>")
-map("n", "<leader>wh", "<C-w>h")
-map("n", "<leader>wl", "<C-w>l")
-map("n", "<leader>wj", "<C-w>j")
-map("n", "<leader>wk", "<C-w>k")
+map("n", "<leader>ww", "<C-w><C-w>", { desc = "Window cycle" })
+map("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
+map("n", "<leader>wl", "<C-w>l", { desc = "Window right" })
+map("n", "<leader>wj", "<C-w>j", { desc = "Window down" })
+map("n", "<leader>wk", "<C-w>k", { desc = "Window up" })
 
 -- Search
 map("n", "<leader>h", ":noh<CR>", { desc = "Clear search highlight" })
