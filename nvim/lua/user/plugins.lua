@@ -60,7 +60,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       vim.lsp.config("*", { capabilities = capabilities })
 
-      for _, server in ipairs({ "ts_ls", "eslint", "lua_ls", "rust_analyzer", "texlab" }) do
+      for _, server in ipairs({ "ts_ls", "eslint", "lua_ls", "rust_analyzer", "texlab", "tinymist" }) do
         pcall(vim.lsp.enable, server)
       end
     end,
@@ -120,7 +120,7 @@ return {
         ensure_installed = {
           "lua", "vim", "vimdoc", "javascript", "typescript", "tsx",
           "rust", "python", "svelte", "html", "css", "json", "yaml",
-          "markdown", "markdown_inline", "bash", "c", "cpp", "toml",
+          "markdown", "markdown_inline", "bash", "c", "cpp", "toml", "typst",
         },
         highlight = { enable = true },
         indent = { enable = true },
