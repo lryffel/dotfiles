@@ -23,3 +23,8 @@ set recolor true
 # Color scheme
 #
 include catppuccin-mocha
+
+#
+# Zoom stuck left fix (2026)
+#
+set guioptions "sh"
