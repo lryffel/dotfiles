@@ -6,3 +6,5 @@ xournalpp/autosave/
 xournalpp/metadata/
 
 *__pycache__*
+
+opencode/service.json
