@@ -1,0 +1,27 @@
+[[language]]
+name = "latex"
+scope = "text.tex"
+file-types = ["tex"]
+roots = [".git"]
+language-servers = ["texlab"]
+auto-format = true
+
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config.texlab]
+diagnosticsDelay = 300
+
+[language-server.texlab.config.texlab.build]
+onSave = false
+useFileList = true
+executable = "latexmk"
+args = ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"]
+forwardSearchAfter = true
+
+[language-server.texlab.config.texlab.forwardSearch]
+executable = "zathura"
+args = ["--synctex-forward", "%l:1:%f", "--fork", "%p"]
+
+[language-server.texlab.config.texlab.chktex]
+onOpenAndSave = true
