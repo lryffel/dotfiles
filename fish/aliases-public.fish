@@ -61,3 +61,6 @@ abbr sy ~/.config/sway/launch.sh
 
 # kill
 abbr ka "killall"
+
+# calendar
+abbr c "cal -wn3"
