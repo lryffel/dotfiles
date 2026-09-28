@@ -8,3 +8,6 @@ xournalpp/metadata/
 *__pycache__*
 
 opencode/service.json
+
+xournalpp/plugins
+xournalpp/settings.xml
